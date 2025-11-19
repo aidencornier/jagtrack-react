@@ -5,7 +5,7 @@ import './App.css'
 function App() {
  return (
    <div className="App">
-    <Header />
+     <Header />
      <p>Welcome to your React-powered class organizer!</p>
    </div>
  )
@@ -13,3 +13,4 @@ function App() {
 
 
 export default App
+
