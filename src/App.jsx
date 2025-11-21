@@ -39,7 +39,7 @@ function App() {
 
      <Footer
        schoolName="Jefferson Academy Secondary"
-       email="your.name@jajags.com"
+       email="aiden.cornier@jajags.com"
      />
    </div>
  )
