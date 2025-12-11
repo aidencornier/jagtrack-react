@@ -13,61 +13,64 @@ import './App.css'
 
 
 function App() {
-const [currentPage, setCurrentPage] = useState('home')
+ const [currentPage, setCurrentPage] = useState('home')
 
 
 
 
-const handlePageChange = (pageName) => {
-  setCurrentPage(pageName)
+ const handlePageChange = (pageName) => {
+   setCurrentPage(pageName)
+ }
+
+
+
+
+ // Decide which page component to show
+ let pageContent
+ if (currentPage === 'home') {
+   pageContent = <HomePage />
+ } else if (currentPage === 'classes') {
+   pageContent = <ClassesPage />
+ } else if (currentPage === 'calendar') {
+   pageContent = <CalendarPage />
+ } else if (currentPage === 'aichat') {
+   pageContent = <AIChatPage />
+ } else if (currentPage === 'about') {
+   pageContent = <AboutPage />
+ }
+
+
+
+
+ return (
+   <div className="App">
+     <Header />
+
+
+
+
+     <Navigation
+       currentPage={currentPage}
+       onPageChange={handlePageChange}
+     />
+
+
+
+
+     {pageContent}
+
+
+
+
+     <Footer
+       schoolName="Jefferson Academy Secondary"
+       email="your.name@jajags.com"
+     />
+   </div>
+ )
 }
 
 
 
 
-// Decide which page component to show
-let pageContent
-if (currentPage === 'home') {
-  pageContent = <HomePage />
-} else if (currentPage === 'classes') {
-  pageContent = <ClassesPage />
-} else if (currentPage === 'calendar') {
-  pageContent = <CalendarPage />
-} else if (currentPage === 'aichat') {
-  pageContent = <AIChatPage />
-} else if (currentPage === 'about') {
-  pageContent = <AboutPage />
-}
-
-
-
-
-return (
-  <div className="App">
-    <Header />
-
-
-
-
-    <Navigation
-      currentPage={currentPage}
-      onPageChange={handlePageChange}
-    />
-
-    {pageContent}
-
-
-
-
-     <Footer     
-      schoolName="Jefferson Academy Secondary"
-      email="aiden.cornier@jajags.com"
-    />
-  </div>
-)
-}
-
-
-
-
-export default App   
+export default App
